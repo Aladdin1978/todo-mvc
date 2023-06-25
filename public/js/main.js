@@ -7,7 +7,7 @@ Array.from(deleteBtn).forEach((el) => {
 });
 
 async function deleteTodo() {
-  const todoID = this.parentNode.dataset.id;
+  const todoId = this.parentNode.dataset.id;
 
   try {
     const response = await fetch("todos/deleteTodo", {
