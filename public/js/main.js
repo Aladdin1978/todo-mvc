@@ -12,7 +12,7 @@ async function deleteTodo() {
   try {
     const response = await fetch("todos/deleteTodo", {
       method: "delete",
-      headers: { "content-type": "application/json" },
+      headers: { "Content-type": "application/json" },
       body: JSON.stringify({
         todoIdFromJSFile: todoId,
       }),
@@ -30,7 +30,7 @@ async function markComplete(){
   try{
     const response = await fetch('todos/markComplete',{
       method: 'put',
-      headers: {'content-type': 'application/json'},
+      headers: {'Content-type': 'application/json'},
       body: JSON.stringify({
         'todoIdFromJSFile: todoId'
       })
@@ -49,7 +49,7 @@ async function markIncomplete(){
   try{
     const response = await fetch('todos/markIncomplete', {
       method: 'put',
-      headers: {'content-type': 'application/json'},
+      headers: {'Content-type': 'application/json'},
       body: JSON.stringify({
         'todoIdFromJSFile': todoId
       })
