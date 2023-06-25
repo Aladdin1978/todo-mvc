@@ -7,7 +7,7 @@ module.exports = {
       const itemsLeft = await Todo.countDocuments({ completed: false });
       res.render("todos.ejs", { todos: todoItems, left: itemsLeft });
     } catch (err) {
-      console.error(err);
+      console.log(err);
     }
   },
   createTodo: async (req, res) => {
@@ -19,7 +19,6 @@ module.exports = {
       console.log(err);
     }
   },
-
   markComplete: async (req, res) => {
     try {
       await Todo.findOneAndUpdate(
@@ -53,7 +52,7 @@ module.exports = {
     try {
       await Todo.findOneAndDelete({ _id: req.body.todoIdFromJSFile });
       console.log("Deleted Todo");
-      res.json("Deleted it");
+      res.json("Deleted It");
     } catch (err) {
       console.log(err);
     }
